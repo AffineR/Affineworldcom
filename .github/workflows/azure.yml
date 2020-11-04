@@ -21,5 +21,6 @@ jobs:
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting
+        app-name: nurse-ovsm
       env:
         FIREBASE_TOKEN: AIzaSyCOnQJcLwUM1pudXx45RgYH3sVIYNLM4jA
