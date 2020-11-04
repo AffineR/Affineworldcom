@@ -1,0 +1,246 @@
+<div class="row">
+    <div class="col-md-12">
+        <app-aboutnavbar></app-aboutnavbar>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>
+                Corona Covid-19 Tracker
+            </h2>
+            <br>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <p>
+                        <span style="color: rgb(71, 46, 50);">
+                            Live statistics and coronavirus news tracking the number of confirmed cases, death cases, recovered cases... The coronavirus COVID-19 is affecting 213 countries and territories around the world and 2 international conveyances.
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            
+            <div class="row">
+                <div class="col-md-6 col-xl-3 mb-4">
+                    <div class="card shadow border-left-primary py-2">
+                        <div class="card-body">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col mr-2">
+                                    <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Confirmed  </span></div>
+                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{{worldcasess.cases}}</span></div>
+                                </div>
+                                <div class="col-auto float-right">
+                                    <img src="../../assets/img/corona-icon-red.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3 mb-4">
+                    <div class="card shadow border-left-success py-2">
+                        <div class="card-body">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col mr-2">
+                                    <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Recovered</span></div>
+                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{{worldcasess.recovered}}</span></div>
+                                </div>
+                                <div class="col-auto float-right">
+                                    <img src="../../assets/img/corona-icon-green.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3 mb-4">
+                    <div class="card shadow border-left-info py-2">
+                        <div class="card-body">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col mr-2">
+                                    <div class="text-uppercase text-danger font-weight-bold text-xs mb-1"><span>Deaths</span></div>
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-auto">
+                                            <div class="text-dark font-weight-bold h5 mb-0 mr-3">
+                                                <span>{{worldcasess.deaths}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto float-right">
+                                    <img src="../../assets/img/corona-icon-red.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3 mb-4">
+                    <div class="card shadow border-left-warning py-2">
+                        <div class="card-body">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col mr-2">
+                                    <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Active</span></div>
+                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{{worldcasess.active}}</span>
+                
+                                    </div>
+                                </div>
+                                <div class="col-auto float-right">
+                                    <img src="../../assets/img/corona-icon-red.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <div class="row text-center">
+        <div class="col-md-12">
+            <h3>
+                Covid-19 Tracker Country Wise
+            </h3>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <p style="font-size: x-small;">
+                        Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.The virus that causes COVID-19 is mainly transmitted through droplets generated when an infected person coughs, sneezes, or exhales. These droplets are too heavy to hang in the air, and quickly fall on floors or surfaces. You can be infected by breathing in the virus if you are within close proximity of someone who has COVID-19, or by touching a contaminated surface and then your eyes, nose or mouth.
+                    </p>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row text-center">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" #inputdaa placeholder="Enter Your Country Name">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <input type="button" class="btn btn-primary" (click)="country(inputdaa.value)" value="Check Status">
+        </div>
+        <div class="col-md-12 text-center">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                <span style="font-size: 22px;">
+                    or
+                </span>
+                <br>
+                <br>
+            <select name="" id="" class="form-control" #input (change)="country(input.value)">
+                <option value="">--select you country--</option>
+                <option *ngFor="let data of alldata;" value="{{data.country}}">{{data.country}}</option>
+            </select>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row text-center" *ngIf="cocntryrs">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 shadow border-left-info py-2">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="{{bycountrydata.countryInfo.flag}}" alt="" width="25px"> 
+                    <span style="padding-left: 10px; font-size: x-large;">
+                        {{bycountrydata.country}}
+                    </span>
+                    <hr>
+                    <h5 class="text-center">
+                        COVID-19 Cases
+                    </h5>
+                    <hr>
+                        <div class="row text-center" style="font-size: 19px;">
+                            <div class="col-md-6" style="color: black;">
+                                <b>Confirmed:- {{bycountrydata.cases}}&nbsp; (+{{bycountrydata.todayCases}})</b>
+                            </div>
+                            <div class="col-md-6" style="color: black;">
+                                <b>Deaths :- {{bycountrydata.deaths}}&nbsp; (+{{bycountrydata.todayDeaths}})</b>
+                            </div>
+                            <div class="col-md-6" style="color: black;">
+                                <b>Recovered :-{{bycountrydata.recovered}}&nbsp; (+{{bycountrydata.todayRecovered}})</b>
+                            </div>
+                            <div class="col-md-6" style="color: black;">
+                                <b>Active :- {{bycountrydata.active}}</b>
+                            </div>
+                        </div>
+                        <hr>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <br>
+    <br>
+    <div class="row" style="height: 650px; overflow: scroll;">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="text" style="width: 40%;" class="form-control float-right" [(ngModel)]="searchstring" placeholder="Search .....">
+            </div>
+        </div>
+        <br>
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>
+                        Country
+                    </th>
+                    <th>
+                        Total Cases
+                    </th>
+                    <th>
+                        New Cases
+                    </th>
+                    <th>
+                        Active
+                    </th>
+                    <th>
+                        Deaths
+                    </th>
+                    <th>
+                        Recovered
+                    </th>
+                </tr>
+                <tr *ngFor="let data of alldata | filter : 'country' : searchstring">
+                    <td>
+                        {{data.country}}
+                    </td>
+                    <td>
+                        {{data.cases}}
+                    </td>
+                    <td>
+                        +{{data.todayCases}}
+                    </td>
+                    <td>
+                        {{data.active}}
+                    </td>
+                    <td>
+                        {{data.deaths}}
+                    </td>
+                    <td>
+                        {{data.recovered}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<app-footer></app-footer>

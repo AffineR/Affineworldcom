@@ -1,0 +1,15 @@
+.sub
+{
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    font-size: large;
+    color: white;
+}
+.sub:hover
+{
+    color: orange;
+    border-bottom-color: orange;
+}

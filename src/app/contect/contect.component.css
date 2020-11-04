@@ -1,0 +1,13 @@
+::placeholder
+{
+    color: black;
+}
+.clck
+{
+    border-bottom: 1px solid skyblue;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    color: black;
+}

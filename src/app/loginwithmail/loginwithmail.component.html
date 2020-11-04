@@ -1,0 +1,49 @@
+<div class="chask">
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6"></div>
+            <div class="col-md-4 col-sm-6">
+                <h5 *ngIf="messagestatus" class="text-danger">{{message}}</h5>
+                <div class="row box">
+                    <div class="col-md-12" style="color: black;">
+                        <h1 style="text-align: center;">
+                            Log In
+                        </h1>
+                        <hr style="border: 1px solid black;">
+                        <h5 style=" text-align: center;">
+                            New to this site? 
+                            <a [routerLink]="['/login']">
+                                Sign Up
+                            </a>
+                        </h5>
+                        <br>
+                        <label for="">Email</label>
+                        <div class="form-group">
+                            <input type="text" width="100%" style="outline: none; background-color: transparent; border-top: none; border-left: none; border-right: none; border-bottom: 2px solid black; color: black;" class="form-control"/>
+                        </div>
+                        <label for="">Password</label>
+                        <div class="form-group">
+                            <input type="password" width="100%" style="outline-color: white; background-color: transparent; border-top: none; border-left: none; border-right: none; border-bottom: 2px solid black; color: black;" class="form-control"/>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <input type="button" class="btn btn-primary" (click)="login()" value="Log In"/>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <button style="border-radius: 20px; height: 40px; " class="btn btn-danger btn-social-icon btn-google mx-1" (click)="signInWithGoogle()"><i class="fa fa-google"></i></button>
+                                <button style="border-radius: 20px; height: 40px;" class="btn btn-primary btn-social-icon btn-facebook mx-1" (click)="signInWithFB()"><i class="fa fa-facebook"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-sm-6"></div>
+        </div>
+    </div>
+</div>

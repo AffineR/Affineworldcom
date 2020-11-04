@@ -1,0 +1,71 @@
+<form [formGroup]="rForm" (ngSubmit)="addpost(rForm.value)">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <br>
+                <h2 class="text-center">Add Post</h2>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <hr>
+            <div class="col-md-4 col-sm-6">
+                <div class="form-group">
+                    <label for="Mname">Title :</label>
+                    <input id="Mname" class="form-control" type="text" formControlName="title" autofocus required/>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="form-group">
+                    <label for="email">Paragraph :</label>
+                    <input id="email" class="form-control" type="text" formControlName="paragraph" required/>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="form-group">
+                  <label for="companytype">Main Image : </label>
+                  <input type="file" (change)="selectfile($event)"/>
+              </div>
+          </div>
+        </div>
+        <hr>
+        <br>
+        <div class="row" formArrayName="pdesc">
+            <div class="col-md-6 col-sm-6 col-xs-12" *ngFor="let group of pdesc.controls; let i = index;" [formGroupName]="i">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-8">
+                      <h4>Description {{i+1}}</h4>
+                    </div>
+                    <div class="col-4 control-buttons">
+                      <img src="/assets/icons/add.svg" alt="" (click)="addAddress1()">
+                      <img src="/assets/icons/remove.svg" alt="" width="24" height="24" (click)="removeAddress1(i)">
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="addText">Enter Descritpion :</label>
+                    <input type="text" formControlName="description" [ngClass]="{'form-control': true,
+                        'is-invalid': group.controls.description.invalid && group.controls.description.touched,
+                        'is-valid': group.controls.description.valid}" id="addText" placeholder="Enter Description">
+                    <small *ngIf="group.controls.description.invalid && group.controls.description.touched" class="form-text custom-invalid-feedback">Field is required</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" value="Add Products" class="btn btn-primary float-right">
+            </div>
+        </div>
+    </div>
+    </form>
+    
+    <br>
+    <br>
