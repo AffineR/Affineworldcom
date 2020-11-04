@@ -1,0 +1,25 @@
+name: Affine-World-com
+
+on: [push]
+
+jobs:
+    firebase-deploy:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+              node-version: [8.x, 10.x, 12.x]
+
+        steps:
+            -users: actions/checkout@master
+            -users: actions/setup-node@master
+            with:
+                node-version: 13.11.0
+            run: npm install
+            run: npm run build
+            users: w9jds/firebase-actions@hosting
+            with:
+                args: deploy --only hosting
+            env:
+                FIREBASE_TOKEN: 
+                    AIzaSyCOnQJcLwUM1pudXx45RgYH3sVIYNLM4jA
