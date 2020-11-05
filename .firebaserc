@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "nurse-ovsm"
+    "default": "nurse-ovsm",
+    "development": "nurse-ovsm"
   }
 }

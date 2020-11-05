@@ -26,6 +26,11 @@ export class AboutnavbarComponent implements OnInit {
 
   ngOnInit()
   {
+    this.getusebydata();
+  }
+
+  getusebydata()
+  {
     var user=localStorage.getItem('user');
     this.user=JSON.parse(user);
     console.log(this.user)
@@ -43,7 +48,7 @@ export class AboutnavbarComponent implements OnInit {
   logout()
   {
     localStorage.clear();
-    this.loc.back();
+    this.getusebydata();
   }
 
 
